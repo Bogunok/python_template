@@ -1,3 +1,4 @@
+import pandas
 
 
 def input_from_console():
@@ -8,12 +9,15 @@ def input_from_console():
         None
 
     Returns:
-        str: a message to type a string
+        str: text which was read from the console
 
     Raises:
         IOError: If user enters incorrect file name or location
     """
-    pass
+    try:
+        return input("Enter the text (enter 0 to stop): ")
+    except IOError:
+        raise IOError("Input-output error occurred")
 
 
 def read_file(file_path):
@@ -30,7 +34,13 @@ def read_file(file_path):
         IOError: If user enters incorrect file name or location
         FileNotFoundError: If user wants to access a file that doesn't exist
     """
-    pass
+    try:
+        with open(file_path, 'r') as file:
+            return file.read()
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Could not find the file '{file_path}'.")
+    except IOError:
+        raise IOError(f"Input-output error occurred while reading a file '{file_path}'")
 
 
 def read_file_with_pandas(file_path):
@@ -47,4 +57,9 @@ def read_file_with_pandas(file_path):
         IOError: If user enters incorrect file name or location
         FileNotFoundError: If user wants to access a file that doesn't exist
     """
-    pass
+    try:
+        return pandas.read_csv(file_path).to_string(index=False)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Could not find the file '{file_path}'.")
+    except IOError:
+        raise IOError(f"Input-output error occurred while reading a file '{file_path}'")

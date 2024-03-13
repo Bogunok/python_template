@@ -13,7 +13,10 @@ def output_text_to_the_console(text):
     Raises:
         IOError: If user entered invalid data
     """
-    pass
+    try:
+        print(text)
+    except IOError:
+        raise IOError("Input-output error occurred")
 
 
 def write_information_to_file(text, file_path):
@@ -30,4 +33,9 @@ def write_information_to_file(text, file_path):
         Raises:
             IOError: If user entered invalid data
         """
-    pass
+    try:
+        with open(file_path, 'w') as file:
+            file.write(text)
+        return f"Text was successfully written to the file: '{file_path}'."
+    except IOError:
+        raise IOError(f"Input-output error occurred while writing text to the file: '{file_path}'")
