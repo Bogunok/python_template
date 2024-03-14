@@ -8,6 +8,7 @@ def main():
     read_text_from_console = input_from_console()
     output_text_to_the_console("Text from console: ")
     output_text_to_the_console(read_text_from_console)
+    write_information_to_file(read_text_from_console, "D:\\pythonWorkspace\\python_template\\data\\Test1.txt")
     print("--------------------------------------------------------------------\n")
 
     print("Test 2:\n")
@@ -15,6 +16,7 @@ def main():
     read_text_from_file = read_file("D:\\pythonWorkspace\\python_template\\data\\song.txt")
     output_text_to_the_console("Text which was read from the file via built-in Python functions:\n")
     output_text_to_the_console(read_text_from_file)
+    write_information_to_file(read_text_from_file, "D:\\pythonWorkspace\\python_template\\data\\Test2.txt")
     print("--------------------------------------------------------------------\n")
 
     print("Test 3:\n")
@@ -22,12 +24,13 @@ def main():
     read_text_from_file_via_pandas = read_file_with_pandas("D:\\pythonWorkspace\\python_template\\data\\starwars.txt")
     output_text_to_the_console("Text which was read from the file via pandas library:\n")
     output_text_to_the_console(read_text_from_file_via_pandas)
+    write_information_to_file(read_text_from_file_via_pandas, "D:\\pythonWorkspace\\python_template\\data\\Test3.txt")
     print("--------------------------------------------------------------------\n")
 
     print("Test 4:\n")
     # write information to file using built-in Python functions
     text_to_write_in_file = input_from_console()
-    write_information_to_file(text_to_write_in_file, "D:\\pythonWorkspace\\python_template\\data\\written text.txt")
+    write_information_to_file(text_to_write_in_file, "D:\\pythonWorkspace\\python_template\\data\\Test4.txt")
 
 
 if __name__ == "__main__":

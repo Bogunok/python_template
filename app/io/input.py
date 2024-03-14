@@ -15,7 +15,7 @@ def input_from_console():
         IOError: If user enters incorrect file name or location
     """
     try:
-        return input("Enter the text (enter 0 to stop): ")
+        return input("Enter the text: ")
     except IOError:
         raise IOError("Input-output error occurred")
 

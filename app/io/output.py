@@ -36,6 +36,6 @@ def write_information_to_file(text, file_path):
     try:
         with open(file_path, 'w') as file:
             file.write(text)
-        return f"Text was successfully written to the file: '{file_path}'."
+        return print(f"\nText was successfully written to the file: '{file_path}'.")
     except IOError:
         raise IOError(f"Input-output error occurred while writing text to the file: '{file_path}'")
