@@ -10,6 +10,7 @@ matplotlib = "*"
 pylint = "*"
 black = "*"
 pytest = "*"
+hypothesis = "*"
 
 [dev-packages]
 
