@@ -1,7 +1,4 @@
-import pandas as pd
 import pytest
-from pandas.conftest import index
-
 from app.io.input import read_file, read_file_with_pandas
 
 
