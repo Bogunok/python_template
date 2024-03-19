@@ -45,7 +45,7 @@ def read_file(file_path):
 
 def read_file_with_pandas(file_path):
     """
-    Function reads file with a help of a pandas lib
+    Function reads file with a help of a pandas library
 
     Args:
         file_path(str): The path of the file user wants to read
