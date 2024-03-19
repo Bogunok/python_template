@@ -58,7 +58,7 @@ def read_file_with_pandas(file_path):
         FileNotFoundError: If user wants to access a file that doesn't exist
     """
     try:
-        return pandas.read_csv(file_path).to_string(index=False)
+        return pandas.read_csv(file_path).to_string(index=False).rstrip('\n')
     except FileNotFoundError:
         raise FileNotFoundError(f"Could not find the file '{file_path}'.")
     except IOError:

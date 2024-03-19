@@ -4,7 +4,9 @@ from app.io.input import read_file, read_file_with_pandas
 
 #  function tests 'read_file' on existing file
 def test_read_existing_file():
-    assert read_file("D:\\pythonWorkspace\\python_template\\data\\test_read_file.txt") == "diamonds"
+    expected_result = 'diamonds'
+    actual_result = read_file("D:\\pythonWorkspace\\python_template\\data\\test_read_file.txt")
+    assert expected_result == actual_result
 
 
 #  function tests 'read_file' on non-existent file
